@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import AI-robot  from '../assets/AI-robot.png'
 
 const projects = {
   frontend: [
@@ -56,7 +57,7 @@ const projects = {
     },
     {
       name: "3D Robot Page",
-      image: "/src/assets/AI-robot.png",
+      image src={AI-robot},
       liveLink: "https://mini-ai-portfolio.vercel.app/",
       codeLink: "https://github.com/sameer7-web/Mini-AI-Portfolio",
       description: "Personal AI-powered portfolio with interactive elements, modern animations, and responsive design to showcase developer profile.",
