@@ -97,7 +97,7 @@ export default function Projects() {
   return (
     <section className="px-6 py-12 md:px-20 bg-white dark:bg-gray-900">
       <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">
-        My Projects
+        My Project
       </h2>
 
       {/* Tabs */}
