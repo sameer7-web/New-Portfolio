@@ -79,7 +79,7 @@ export default function ContactSection() {
         {/* Social Icons */}
         <div className="flex gap-6 mt-4 text-2xl text-gray-700 dark:text-white">
           <a
-            href="https://www.linkedin.com/in/sameermaharana"
+            href="https://www.linkedin.com/in/sameer-maharana/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-600"
@@ -87,7 +87,7 @@ export default function ContactSection() {
             <FaLinkedin />
           </a>
           <a
-            href="https://github.com/sameermaharana"
+            href="https://github.com/sameer7-web"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gray-900 dark:hover:text-gray-100"
@@ -95,7 +95,7 @@ export default function ContactSection() {
             <FaGithub />
           </a>
           <a
-            href="https://www.instagram.com/sameermaharana"
+            href="https://www.instagram.com/_sameer_maharana"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-pink-500"
@@ -103,7 +103,7 @@ export default function ContactSection() {
             <FaInstagram />
           </a>
           <a
-            href="https://twitter.com/sameermaharana"
+            href="https://x.com/Captain1319000?t=XdMZvRC8Pju5DwHfC9VNJQ&s=09"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-black dark:hover:text-white"
