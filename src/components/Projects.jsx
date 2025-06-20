@@ -1,19 +1,18 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import AI-robot  from '../assets/AI-robot.png'
 
 const projects = {
   frontend: [
     {
       name: "Business Landing Page",
-      image: "/src/assets/Business Landing page.png",
+      image: "/src/assets/Business.png",
       liveLink: "https://react-landing-page-ebon-ten.vercel.app/",
       codeLink: "https://github.com/sameer7-web/React-landing-page",
       description: "Modern React landing page with smooth animations, responsive design, and clear sections for portfolio presentation",
     },
     {
       name: "Apple website",
-      image: "/src/assets/Apple website.png",
+      image: "/src/assets/Apple.png",
       liveLink: "https://iphone-website-lovat.vercel.app/",
       codeLink: "https://github.com/sameer7-web/Iphone-Website",
       description: "A sleek, responsive iPhone landing page showcasing features, design, and innovation with modern animations.",
@@ -57,7 +56,7 @@ const projects = {
     },
     {
       name: "3D Robot Page",
-      image src={AI-robot},
+      image :"/src/assets/AI-robot.png",
       liveLink: "https://mini-ai-portfolio.vercel.app/",
       codeLink: "https://github.com/sameer7-web/Mini-AI-Portfolio",
       description: "Personal AI-powered portfolio with interactive elements, modern animations, and responsive design to showcase developer profile.",
