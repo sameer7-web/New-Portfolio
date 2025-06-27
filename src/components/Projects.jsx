@@ -4,43 +4,57 @@ import { motion, AnimatePresence } from "framer-motion";
 const projects = {
   frontend: [
     {
+      name: "Vyom",
+      image: "/assets/vyom.png",
+      liveLink: "https://vyom-zeta.vercel.app/",
+      codeLink: "https://github.com/sameer7-web/VYOM",
+      description: "Vyom is a small startup e-commerce brand selling beautiful earrings, chains, and bangles crafted for everyday elegance and charm.",
+    },
+    {
+      name: "RideWithMe",
+      image: "/assets/ridewithme.png",
+      liveLink: "https://ridewithme-tawny.vercel.app/",
+      codeLink: "https://github.com/sameer7-web/Travel-website",
+      description: "Made this for a solo traveler who gives tours—site lets people book trips, vibe with destinations, and start exploring.",
+    },
+    {
       name: "Business Landing Page",
-      image: "/src/assets/Business.png",
+      image: "/assets/Business.png",
       liveLink: "https://react-landing-page-ebon-ten.vercel.app/",
       codeLink: "https://github.com/sameer7-web/React-landing-page",
       description: "Modern React landing page with smooth animations, responsive design, and clear sections for portfolio presentation",
     },
     {
       name: "Apple website",
-      image: "/src/assets/Apple.png",
+      image: "/assets/Apple.png",
       liveLink: "https://iphone-website-lovat.vercel.app/",
       codeLink: "https://github.com/sameer7-web/Iphone-Website",
       description: "A sleek, responsive iPhone landing page showcasing features, design, and innovation with modern animations.",
     },
     {
       name: "Expense Tracker",
-      image: "/src/assets/Money.png",
+      image: "/assets/Money.png",
       liveLink: "https://sameer7-web.github.io/Expense-tracker/",
       codeLink: "https://github.com/sameer7-web/Expense-tracker",
       description: "Simple and responsive expense tracker to manage your budget with real-time balance updates and history",
     },
     {
       name: "Recipe Website",
-      image: "/src/assets/Receipe.png",
+      image: "/assets/Receipe.png",
       liveLink: "https://sameer7-web.github.io/Captain-Recipe-/",
       codeLink: "https://github.com/sameer7-web/Captain-Recipe-",
       description: "Search and discover recipes with ingredients and instructions using a clean, responsive interface and API.",
     },
     {
       name: "QR Code generator",
-      image: "/src/assets/Qr.png",
+      image: "/assets/Qr.png",
       liveLink: "https://sameer7-web.github.io/QR-generator/",
       codeLink: "https://github.com/sameer7-web/QR-generator",
       description: "Generate QR codes instantly for any text or URL using a simple and responsive interface.",
     },
     {
       name: "Todo List",
-      image: "/src/assets/Todo-list.png",
+      image: "/assets/Todo.png",
       liveLink: "https://github.com/sameer7-web/QR-generator",
       codeLink: "https://sameer7-web.github.io/todo-list/",
       description: "Organize daily tasks efficiently with this clean, minimal, and responsive todo list web application.",
@@ -49,14 +63,14 @@ const projects = {
   animation: [
     {
       name: "Animated Landing Page",
-      image: "/src/assets/Animation-bubble.png",
+      image: "/assets/Bubble.png",
       liveLink: "https://mini-portfolio-phi-blond.vercel.app/",
       codeLink: "https://github.com/sameer7-web/Mini-Portfolio",
       description: "Showcases frontend skills, projects, and contact details with a smooth, responsive, and visually appealing layout.",
     },
     {
       name: "3D Robot Page",
-      image :"/src/assets/AI-robot.png",
+      image :"/assets/AI.png",
       liveLink: "https://mini-ai-portfolio.vercel.app/",
       codeLink: "https://github.com/sameer7-web/Mini-AI-Portfolio",
       description: "Personal AI-powered portfolio with interactive elements, modern animations, and responsive design to showcase developer profile.",
@@ -73,7 +87,7 @@ export default function Projects() {
   const [activeTab, setActiveTab] = useState("frontend");
 
   return (
-    <section className="px-6 py-12 md:px-20 bg-white dark:bg-gray-900">
+    <section id="projects" className="px-6 py-12 md:px-20 bg-white dark:bg-gray-900">
       <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">
         My Projects
       </h2>
@@ -137,7 +151,7 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-gray-800 border text-white rounded hover:bg-gray-900 transition text-sm"
                 >
-                  GitHub Code
+                  GitHub
                 </a>
               </div>
             </motion.div>

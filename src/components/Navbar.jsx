@@ -68,7 +68,7 @@ const Navbar = () => {
 
           <motion.a
             whileHover={{ scale: 1.05 }}
-            href="/src/assets/Sameer_maharana_Resume1.pdf"
+            href="/assets/Resume - Copy.pdf"
             target="_blank"
   rel="noopener noreferrer"
             className="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700 text-sm transition"

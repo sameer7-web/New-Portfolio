@@ -7,7 +7,7 @@ import ParticlesBackground from './ParticlesBackground';
 
 const Hero = () => {
   return (
-    <div className="relative bg-white dark:bg-gray-900 text-black dark:text-white">
+    <section id="home" className="relative bg-white dark:bg-gray-900 text-black dark:text-white">
       
       {/* 🔵 Particle Background */}
       <ParticlesBackground />
@@ -32,13 +32,13 @@ const Hero = () => {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
               <TypeAnimation
                 sequence={[
-                  'Sameer Maharana',
+                  'Frontend Developer',
                   1000,
                   'UI Developer',
                   1000,
-                  'Frontend Developer',
-                  1000,
                   'React.js Developer',
+                  1000,
+                  'Sameer Maharana',
                   1000,
                   'Captain on Mission to save UI',
                   1000,
@@ -68,7 +68,7 @@ const Hero = () => {
           </motion.div>
         </section>
       </Parallax>
-    </div>
+    </section>
   );
 };
 

@@ -18,7 +18,7 @@ const About = () => {
             className="w-full sm:w-1/2 flex justify-center"
           >
             <img
-              src="/src/assets/porfile-full.png"
+              src="/assets/Profile.png"
               alt="Sameer Maharana"
               className="rounded-2xl shadow-lg w-90 h-90 object-cover"
             />
@@ -36,7 +36,7 @@ const About = () => {
               I’m Sameer Maharana, a passionate frontend developer who enjoys building clean and modern user interfaces. I specialize in HTML, CSS, JavaScript, Tailwind CSS, and React.js. I’ve worked on several freelance projects for students and startups, bringing ideas to life through intuitive and beautiful web apps.
             </p>
             <a
-              href="/src/assets/Sameer_maharana_Resume1.pdf"
+              href="/public/assets/Resume - Copy.pdf"
               target="_blank"
   rel="noopener noreferrer"
               className="inline-block bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition"

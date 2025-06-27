@@ -7,9 +7,11 @@ export default function ContactSection() {
       id="contact"
       className="flex flex-col md:flex-row items-center justify-center gap-12 px-6 py-16 md:px-20 bg-white dark:bg-gray-900 transition-colors duration-300"
     >
-      {/* Left: Spline 3D Robot */}
-      <div className="w-full md:w-1/2 h-[400px] md:h-[500px]">
-        <Spline scene="https://prod.spline.design/bszHJUCQ4p2os0Du/scene.splinecode" />
+      {/* Left: Spline 3D Animation in a rounded container */}
+      <div className="w-full md:w-1/2 flex justify-center">
+        <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden shadow-lg bg-[#F0F9FF]">
+          <Spline scene="https://prod.spline.design/HApQQ2j-dQyBuPu3/scene.splinecode" />
+        </div>
       </div>
 
       {/* Right: Contact Form */}
@@ -21,7 +23,6 @@ export default function ContactSection() {
           action="https://api.web3forms.com/submit"
           className="space-y-4"
         >
-          {/* Web3Forms Hidden Access Key */}
           <input type="hidden" name="access_key" value="975341b5-6b9c-4043-b46f-e3cb75e88b6a" />
 
           <div>
@@ -36,9 +37,7 @@ export default function ContactSection() {
           </div>
 
           <div>
-            <label className="block text-gray-700 dark:text-gray-300 mb-1">
-              Email<span className="text-red-500"></span>
-            </label>
+            <label className="block text-gray-700 dark:text-gray-300 mb-1">Email</label>
             <input
               type="email"
               name="email"
@@ -59,7 +58,6 @@ export default function ContactSection() {
             />
           </div>
 
-          {/* ✅ Submit Button */}
           <button
             type="submit"
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-md transition"
@@ -68,7 +66,6 @@ export default function ContactSection() {
           </button>
         </form>
 
-        {/* Email Info */}
         <div className="text-sm text-gray-600 dark:text-gray-400">
           📧 Mail me at:{" "}
           <a href="mailto:sameermaharana1319@gmail.com" className="text-blue-600 hover:underline">
@@ -76,7 +73,6 @@ export default function ContactSection() {
           </a>
         </div>
 
-        {/* Social Icons */}
         <div className="flex gap-6 mt-4 text-2xl text-gray-700 dark:text-white">
           <a
             href="https://www.linkedin.com/in/sameer-maharana/"
