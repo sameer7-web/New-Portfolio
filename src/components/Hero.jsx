@@ -15,7 +15,7 @@ const Hero = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    handleResize(); // check on first load
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -26,7 +26,6 @@ const Hero = () => {
 
       <Parallax strength={300}>
         <section className="relative z-10 min-h-screen flex flex-col md:flex-row items-center justify-between gap-10 px-6 md:px-20 pt-28 md:pt-32 pb-10 transition-colors">
-
           {/* 🧠 Text Content */}
           <motion.div
             initial={{ x: -40, opacity: 0 }}
@@ -58,16 +57,9 @@ const Hero = () => {
                 repeat={Infinity}
               />
             </h1>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              className="mt-2 px-6 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition"
-            >
-              Explore Projects
-            </motion.button>
           </motion.div>
 
-          {/* 🤖 Spline 3D (Only on Desktop) */}
+          {/* 🤖 3D Spline or Mobile Image */}
           <motion.div
             initial={{ x: 40, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
