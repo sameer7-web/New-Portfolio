@@ -1,28 +1,46 @@
+'use client';
+import { useEffect, useState } from 'react';
 import Spline from '@splinetool/react-spline';
 import { FaLinkedin, FaGithub, FaInstagram, FaXTwitter } from 'react-icons/fa6';
 
 export default function ContactSection() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <section
       id="contact"
       className="flex flex-col md:flex-row items-center justify-center gap-12 px-6 py-16 md:px-20 bg-white dark:bg-gray-900 transition-colors duration-300"
     >
-      {/* Left: Spline 3D Animation in a rounded container */}
+      {/* 🎥 Animation (hidden on small screens) */}
       <div className="w-full md:w-1/2 flex justify-center">
         <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden shadow-lg bg-[#F0F9FF]">
-          <Spline scene="https://prod.spline.design/HApQQ2j-dQyBuPu3/scene.splinecode" />
+          {!isMobile ? (
+            <Spline scene="https://prod.spline.design/HApQQ2j-dQyBuPu3/scene.splinecode" />
+          ) : (
+           <div className="w-full h-full rounded-full overflow-hidden">
+  <img
+    src="/assets/3dcontactimage.png"
+    alt="3D Contact"
+    className="w-full h-full object-cover rounded-full"
+  />
+</div>
+
+          )}
         </div>
       </div>
 
-      {/* Right: Contact Form */}
+      {/* 📬 Contact Form */}
       <div className="w-full md:w-1/2 space-y-6">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Let's Connect</h2>
 
-        <form
-          method="POST"
-          action="https://api.web3forms.com/submit"
-          className="space-y-4"
-        >
+        <form method="POST" action="https://api.web3forms.com/submit" className="space-y-4">
           <input type="hidden" name="access_key" value="975341b5-6b9c-4043-b46f-e3cb75e88b6a" />
 
           <div>
@@ -67,8 +85,11 @@ export default function ContactSection() {
         </form>
 
         <div className="text-sm text-gray-600 dark:text-gray-400">
-          📧 Mail me at:{" "}
-          <a href="mailto:sameermaharana1319@gmail.com" className="text-blue-600 hover:underline">
+          📧 Mail me at:{' '}
+          <a
+            href="mailto:sameermaharana1319@gmail.com"
+            className="text-blue-600 hover:underline"
+          >
             sameermaharana1319@gmail.com
           </a>
         </div>

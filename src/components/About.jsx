@@ -18,7 +18,7 @@ const About = () => {
             className="w-full sm:w-1/2 flex justify-center"
           >
             <img
-              src="/assets/Profile.png"
+              src="/assets/porfile.png"
               alt="Sameer Maharana"
               className="rounded-2xl shadow-lg w-90 h-90 object-cover"
             />
