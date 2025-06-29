@@ -4,7 +4,9 @@ import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [activeLink, setActiveLink] = useState('home'); // State to track the active link
 
+  // Theme logic (existing)
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     const html = document.documentElement;
@@ -31,6 +33,42 @@ const Navbar = () => {
     }
   };
 
+  // New: Effect to handle active link on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'projects', 'contact'];
+      let currentActive = 'home'; // Default to home
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sectionId = sections[i];
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          // Check if the top of the section is within the viewport (or slightly above)
+          // Adjust 0 if you want the line to appear earlier/later
+          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+            currentActive = sectionId;
+            break; // Found the active section, stop checking
+          }
+        }
+      }
+      setActiveLink(currentActive);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Call once on mount to set initial active link if page is not at the very top
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // Empty dependency array means this runs once on mount and cleans up on unmount
+
+  // New: Function to handle link clicks
+  const handleLinkClick = (linkName) => {
+    setActiveLink(linkName.toLowerCase());
+  };
+
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
@@ -49,7 +87,13 @@ const Navbar = () => {
               key={link}
               href={`#${link.toLowerCase()}`}
               whileHover={{ scale: 1.1 }}
-              className="hover:text-blue-600 transition-colors"
+              // Add conditional classes here for the active line
+              className={`relative hover:text-blue-600 transition-colors ${
+                activeLink === link.toLowerCase()
+                  ? 'text-blue-600 dark:text-white after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-blue-600 after:dark:bg-white after:rounded-full after:transition-all after:duration-300 after:scale-x-100'
+                  : 'after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-blue-600 after:dark:bg-white after:rounded-full after:transition-all after:duration-300 after:scale-x-0 group-hover:after:scale-x-100' // Ensure hover still works
+              }`}
+              onClick={() => handleLinkClick(link)} // Update active state on click
             >
               {link}
             </motion.a>
@@ -70,7 +114,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             href="/assets/Resume - Copy.pdf"
             target="_blank"
-  rel="noopener noreferrer"
+            rel="noopener noreferrer"
             className="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700 text-sm transition"
           >
             Resume
@@ -78,9 +122,17 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Mobile navigation (you might want to add active state here too) */}
       <div className="md:hidden flex justify-center py-2 bg-white dark:bg-gray-900 border-t gap-4 text-sm">
         {['Home', 'About', 'Projects', 'Contact'].map((link) => (
-          <a key={link} href={`#${link.toLowerCase()}`} className="hover:text-blue-600">
+          <a
+            key={link}
+            href={`#${link.toLowerCase()}`}
+            className={`hover:text-blue-600 ${
+              activeLink === link.toLowerCase() ? 'text-blue-600 dark:text-white' : ''
+            }`}
+            onClick={() => handleLinkClick(link)}
+          >
             {link}
           </a>
         ))}
