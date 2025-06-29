@@ -34,7 +34,7 @@ const Navbar = () => {
     }
   };
 
-  // New: Effect to handle active link on scroll
+  // Effect to handle active link on scroll
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'about', 'projects', 'contact'];
@@ -46,10 +46,9 @@ const Navbar = () => {
         if (section) {
           const rect = section.getBoundingClientRect();
           // Check if the top of the section is within the viewport (or slightly above)
-          // Adjust 0 if you want the line to appear earlier/later
           if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
             currentActive = sectionId;
-            break; // Found the active section, stop checking
+            break;
           }
         }
       }
@@ -57,15 +56,14 @@ const Navbar = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    // Call once on mount to set initial active link if page is not at the very top
-    handleScroll();
+    handleScroll(); // Call once on mount to set initial active link
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []); // Empty dependency array means this runs once on mount and cleans up on unmount
+  }, []);
 
-  // New: Function to handle link clicks
+  // Function to handle link clicks
   const handleLinkClick = (linkName) => {
     setActiveLink(linkName.toLowerCase());
   };
@@ -88,13 +86,12 @@ const Navbar = () => {
               key={link}
               href={`#${link.toLowerCase()}`}
               whileHover={{ scale: 1.1 }}
-              // Add conditional classes here for the active line
               className={`relative hover:text-blue-600 transition-colors ${
                 activeLink === link.toLowerCase()
                   ? 'text-blue-600 dark:text-white after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-blue-600 after:dark:bg-white after:rounded-full after:transition-all after:duration-300 after:scale-x-100'
-                  : 'after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-blue-600 after:dark:bg-white after:rounded-full after:transition-all after:duration-300 after:scale-x-0 group-hover:after:scale-x-100' // Ensure hover still works
+                  : 'after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-blue-600 after:dark:bg-white after:rounded-full after:transition-all after:duration-300 after:scale-x-0 hover:after:scale-x-100'
               }`}
-              onClick={() => handleLinkClick(link)} // Update active state on click
+              onClick={() => handleLinkClick(link)}
             >
               {link}
             </motion.a>
@@ -110,18 +107,38 @@ const Navbar = () => {
           >
             {darkMode ? '🌙' : '☀️'}
           </motion.button>
-<div className="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700 text-sm transition">
-          <SignedOut >
-        <SignInButton />
-      </SignedOut>
-      <SignedIn >
-        <UserButton />
-      </SignedIn>
-      </div>
+
+          {/* Clerk Authentication Integration */}
+          <SignedOut>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700 text-sm transition cursor-pointer"
+            >
+              <SignInButton mode="modal">
+                <button className="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700 text-sm transition">
+                  Sign In
+                </button>
+              </SignInButton>
+            </motion.div>
+          </SignedOut>
+          <SignedIn>
+            {/* Increase the size of the UserButton photo */}
+            <UserButton
+              afterSignOutUrl="/"
+              appearance={{
+                elements: {
+                  userButtonAvatarBox: {
+                    width: '40px', // Example: Increase width
+                    height: '40px', // Example: Increase height
+                  },
+                },
+              }}
+            />
+          </SignedIn>
         </div>
       </div>
 
-      {/* Mobile navigation (you might want to add active state here too) */}
+      {/* Mobile navigation */}
       <div className="md:hidden flex justify-center py-2 bg-white dark:bg-gray-900 border-t gap-4 text-sm">
         {['Home', 'About', 'Projects', 'Contact'].map((link) => (
           <a
