@@ -128,8 +128,8 @@ const Navbar = () => {
               appearance={{
                 elements: {
                   userButtonAvatarBox: {
-                    width: '40px', // Example: Increase width
-                    height: '40px', // Example: Increase height
+                    width: '25px', // Example: Increase width
+                    height: '25px', // Example: Increase height
                   },
                 },
               }}
