@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -109,16 +110,14 @@ const Navbar = () => {
           >
             {darkMode ? '🌙' : '☀️'}
           </motion.button>
-
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            href="/assets/Resume - Copy.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700 text-sm transition"
-          >
-            Resume
-          </motion.a>
+<div className="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700 text-sm transition">
+          <SignedOut >
+        <SignInButton />
+      </SignedOut>
+      <SignedIn >
+        <UserButton />
+      </SignedIn>
+      </div>
         </div>
       </div>
 

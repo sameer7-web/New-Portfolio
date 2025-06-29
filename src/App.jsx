@@ -5,6 +5,7 @@ import About from './components/About';
 import TechStack from './components/TechStack';
 import Projects from './components/Projects';
 import ContactSection from './components/ContactSection';
+import { ClerkProvider } from '@clerk/clerk-react';
 
 const App = () => {
   const projectRef = useRef(null);
@@ -12,9 +13,14 @@ const App = () => {
   const scrollToProjects = () => {
     projectRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
+if (!PUBLISHABLE_KEY) {
+  throw new Error('Missing Publishable Key')
+}
   return (
     <>
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl='/'>
       <Navbar onProjectsClick={scrollToProjects} />
       <Hero />
       <About />
@@ -25,6 +31,7 @@ const App = () => {
       </section>
 
       <ContactSection />
+      </ClerkProvider>
     </>
   );
 };
