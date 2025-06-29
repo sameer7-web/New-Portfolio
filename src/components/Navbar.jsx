@@ -112,10 +112,10 @@ const Navbar = () => {
           <SignedOut>
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700 text-sm transition cursor-pointer"
+              className="bg-blue-600 text-white px-2 py-1.5 rounded-lg hover:bg-blue-700 text-sm transition cursor-pointer"
             >
               <SignInButton mode="modal">
-                <button className="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700 text-sm transition">
+                <button className="bg-blue-600 text-white px-2 py-1.5 rounded-lg hover:bg-blue-700 text-sm transition">
                   Sign In
                 </button>
               </SignInButton>
@@ -128,8 +128,8 @@ const Navbar = () => {
               appearance={{
                 elements: {
                   userButtonAvatarBox: {
-                    width: '25px', // Example: Increase width
-                    height: '25px', // Example: Increase height
+                    width: '40px', // Example: Increase width
+                    height: '40px', // Example: Increase height
                   },
                 },
               }}
