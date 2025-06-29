@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { span } from "framer-motion/client";
 
 const projects = {
   frontend: [
     {
-      name: "Vyom",
+      name: "Vyom  (Under-maintenance)",
       image: "/assets/vyom.png",
       liveLink: "https://vyom-zeta.vercel.app/",
       codeLink: "https://github.com/sameer7-web/VYOM",
-      description: "Vyom is a small startup e-commerce brand selling beautiful earrings, chains, and bangles crafted for everyday elegance and charm.",
+      description: "Vyom is a small startup e-commerce brand selling beautiful earrings, chains, and bangles crafted for everyday elegance and charm.", 
+
     },
     {
       name: "RideWithMe",
@@ -128,7 +130,7 @@ export default function Projects() {
               <img
                 src={project.image}
                 alt={project.name}
-                className="w-full h-60 object-cover rounded-lg mb-4"
+                className="w-full h-60 object-fit rounded-lg mb-4"
               />
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 {project.name}
