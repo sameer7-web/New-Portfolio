@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
 const projects = {
   frontend: [
     {
@@ -7,16 +8,14 @@ const projects = {
       image: "/assets/agency.png",
       liveLink: "https://captain-flax.vercel.app/",
       codeLink: "https://github.com/sameer7-web/captain",
-      description: "Captain Agency builds modern, responsive websites with stunning UI/UX, animations, and performance-focused frontend for brands that demand impact.", 
-
+      description: "Captain Agency builds modern, responsive websites with stunning UI/UX, animations, and performance-focused frontend for brands that demand impact.",
     },
     {
       name: "Vyom  (Under-maintenance)",
       image: "/assets/vyom.png",
       liveLink: "https://vyom-zeta.vercel.app/",
       codeLink: "https://github.com/sameer7-web/VYOM",
-      description: "Vyom is a small startup e-commerce brand selling beautiful earrings, chains, and bangles crafted for everyday elegance and charm.", 
-
+      description: "Vyom is a small startup e-commerce brand selling beautiful earrings, chains, and bangles crafted for everyday elegance and charm.",
     },
     {
       name: "RideWithMe",
@@ -78,17 +77,27 @@ const projects = {
     },
     {
       name: "3D Robot Page",
-      image :"/assets/AI.png",
+      image: "/assets/AI.png",
       liveLink: "https://mini-ai-portfolio.vercel.app/",
       codeLink: "https://github.com/sameer7-web/Mini-AI-Portfolio",
       description: "Personal AI-powered portfolio with interactive elements, modern animations, and responsive design to showcase developer profile.",
     },
   ],
+  landing: [
+    {
+      name: "Clean Landing Page",
+      image: "/assets/clean-landing.png",
+      liveLink: "https://your-live-link.com",
+      codeLink: "https://github.com/your-repo",
+      description: "A sleek landing page design with clear CTAs and responsive layout for conversions.",
+    }
+  ]
 };
 
 const tabs = [
   { key: "frontend", label: "Frontend Projects" },
   { key: "animation", label: "Animation Projects" },
+  { key: "landing", label: "Landing Pages" },
 ];
 
 export default function Projects() {
