@@ -18,25 +18,11 @@ const projects = {
       description: "Vyom is a small startup e-commerce brand selling beautiful earrings, chains, and bangles crafted for everyday elegance and charm.",
     },
     {
-      name: "RideWithMe",
+      name: "RideWithMe (Under-maintenance)",
       image: "/assets/ridewithme.png",
       liveLink: "https://ridewithme-tawny.vercel.app/",
       codeLink: "https://github.com/sameer7-web/Travel-website",
       description: "Made this for a solo traveler who gives tours—site lets people book trips, vibe with destinations, and start exploring.",
-    },
-    {
-      name: "Business Landing Page",
-      image: "/assets/Business.png",
-      liveLink: "https://react-landing-page-ebon-ten.vercel.app/",
-      codeLink: "https://github.com/sameer7-web/React-landing-page",
-      description: "Modern React landing page with smooth animations, responsive design, and clear sections for portfolio presentation",
-    },
-    {
-      name: "Apple website",
-      image: "/assets/Apple.png",
-      liveLink: "https://iphone-website-lovat.vercel.app/",
-      codeLink: "https://github.com/sameer7-web/Iphone-Website",
-      description: "A sleek, responsive iPhone landing page showcasing features, design, and innovation with modern animations.",
     },
     {
       name: "Expense Tracker",
@@ -84,12 +70,19 @@ const projects = {
     },
   ],
   landing: [
+     {
+      name: "Business Landing Page",
+      image: "/assets/Business.png",
+      liveLink: "https://react-landing-page-ebon-ten.vercel.app/",
+      codeLink: "https://github.com/sameer7-web/React-landing-page",
+      description: "Modern React landing page with smooth animations, responsive design, and clear sections for portfolio presentation",
+    },
     {
-      name: "Clean Landing Page",
-      image: "/assets/clean-landing.png",
-      liveLink: "https://your-live-link.com",
-      codeLink: "https://github.com/your-repo",
-      description: "A sleek landing page design with clear CTAs and responsive layout for conversions.",
+      name: "Apple website",
+      image: "/assets/Apple.png",
+      liveLink: "https://iphone-website-lovat.vercel.app/",
+      codeLink: "https://github.com/sameer7-web/Iphone-Website",
+      description: "A sleek, responsive iPhone landing page showcasing features, design, and innovation with modern animations.",
     }
   ]
 };
