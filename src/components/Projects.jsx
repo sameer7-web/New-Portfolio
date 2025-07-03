@@ -3,6 +3,14 @@ import { motion, AnimatePresence } from "framer-motion";
 const projects = {
   frontend: [
     {
+      name: "Captain Agency  (Under-maintenance)",
+      image: "/assets/agency.png",
+      liveLink: "https://captain-flax.vercel.app/",
+      codeLink: "https://github.com/sameer7-web/captain",
+      description: "Captain Agency builds modern, responsive websites with stunning UI/UX, animations, and performance-focused frontend for brands that demand impact.", 
+
+    },
+    {
       name: "Vyom  (Under-maintenance)",
       image: "/assets/vyom.png",
       liveLink: "https://vyom-zeta.vercel.app/",
